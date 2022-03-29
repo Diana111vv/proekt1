@@ -5,24 +5,160 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+using System.Data.Common;
+using System.Linq;
 
 namespace proekt1
-{
-    public partial class evaluationForm : Form
+{ 
+    public partial class evaluationForm : Form 
     {
+        SqlConnection sqlConnection=new SqlConnection("Data Source=BABULYACOMPUCTE\\SQLEXPRESS;Initial Catalog=msdb;Integrated Security=True");
+        SqlCommand sqlCommand;
+        int choosenAlp=-1;
+        int currentAlp1=0;
+        int currentAlp2=1;
+        List<ImagePicture> pictures=new List<ImagePicture>();
+        main main;
+
         public evaluationForm()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void choose1_CheckedChanged(object sender, EventArgs e)
+        public evaluationForm(main main)
         {
-
+            InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
+            this.main = main;
         }
 
-        private void choose2_CheckedChanged(object sender, EventArgs e)
+        private void readPictures1_Click(object sender, EventArgs e)
         {
+            //Array array = null;
+            //sqlConnection.Open();
+            //for (int i = 1; i < 17; i++)
+            //{
+
+
+
+            //    readPictures1.Image = Image.FromFile(@$"{Environment.CurrentDirectory}\alpakas\{i}alp.jpg");
+            //    MemoryStream ms = new MemoryStream();
+            //    readPictures1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            //    array = ms.ToArray();
+
+
+            //    sqlCommand = new SqlCommand("INSERT INTO ImageTable (id,pictures1) VALUES (@Id,@pictures1)", sqlConnection);
+            //    sqlCommand.Parameters.AddWithValue("@Id", i);
+            //    sqlCommand.Parameters.Add("@pictures1", SqlDbType.VarBinary, 8000).Value = array;
+            //    sqlCommand.ExecuteNonQuery();
+            //    array = null;
+            //}
+            //sqlConnection.Close();
+
+
 
         }
+
+        private void evaluationForm_Load(object sender, EventArgs e)
+        {
+            picture2.SizeMode = PictureBoxSizeMode.StretchImage;
+            readPictures1.SizeMode = PictureBoxSizeMode.StretchImage;
+            sqlConnection.Open();          
+            sqlCommand = new SqlCommand($"SELECT * FROM ImageTable", sqlConnection);          
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            int i=1;
+            if (sqlDataReader.HasRows)
+            {
+                while (sqlDataReader.Read())
+                {          
+                    byte[] data = (byte[])sqlDataReader.GetValue(1);
+                    var stream = new MemoryStream(data);                  
+                    pictures.Add(new ImagePicture(Image.FromStream(stream),i));
+                    i++;
+
+                }
+            }                     
+            sqlConnection.Close();
+            int n = pictures.Count;
+            Random r = new Random();
+            while (n > 1)
+            {
+                n--;
+                int k = r.Next(n + 1);
+                ImagePicture value = pictures[k];
+                pictures[k] = pictures[n];
+                pictures[n] = value;
+            }
+            readPictures1.Image = pictures[currentAlp1].image;
+            picture2.Image = pictures[currentAlp2].image;
+        }
+
+        private void choose1_Click(object sender, EventArgs e)
+        {
+            choosenAlp = 1;
+        }
+
+        private void choose2_Click(object sender, EventArgs e)
+        {
+            choosenAlp = 2;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (choosenAlp == 1)
+            {
+                pictures[currentAlp1].rating++;
+                ChangeAlpaco();
+
+            }
+            else if (choosenAlp == 2)
+            {
+                pictures[currentAlp2].rating++;
+                ChangeAlpaco();
+            }
+            else
+            {
+                MessageBox.Show("Вы не выбрали альпаку");
+            }
+        }
+        private void ChangeAlpaco()
+        {
+            if (currentAlp2< 16)
+            {
+                if (currentAlp2 == 15 && currentAlp1==14)
+                {
+                    currentAlp1 = 0;
+
+                }
+                
+                else  
+                {
+                    currentAlp1++;
+                    currentAlp2++;
+                }
+                if (currentAlp2 < 16 && currentAlp1 < 16)
+                {
+                    picture2.Image = pictures[currentAlp2].image;
+                    readPictures1.Image = pictures[currentAlp1].image;
+                }
+            }
+
+            else
+            {
+                List<ImagePicture> winPictures =pictures.OrderBy(x => x.rating).ToList();
+                main.pictureBoxWinner.Image = winPictures[0].image;
+                Close();
+
+            }
+
+
+        }
+
+        
     }
+    
 }

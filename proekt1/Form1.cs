@@ -24,7 +24,7 @@ namespace proekt1
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            evaluationForm a = new evaluationForm();
+            evaluationForm a = new evaluationForm(this);
             a.Show();
         }
     }

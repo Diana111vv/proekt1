@@ -30,31 +30,23 @@ namespace proekt1
         private void InitializeComponent()
         {
             this.name = new System.Windows.Forms.TextBox();
-            this.top = new System.Windows.Forms.TextBox();
             this.InstructionButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
+            this.pictureBoxWinner = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWinner)).BeginInit();
             this.SuspendLayout();
             // 
             // name
             // 
+            this.name.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.name.BackColor = System.Drawing.Color.MediumPurple;
             this.name.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.name.Location = new System.Drawing.Point(245, 101);
+            this.name.Location = new System.Drawing.Point(245, 36);
             this.name.Name = "name";
             this.name.ReadOnly = true;
             this.name.Size = new System.Drawing.Size(277, 27);
             this.name.TabIndex = 0;
             this.name.Text = "                        Топ Альпак";
-            // 
-            // top
-            // 
-            this.top.BackColor = System.Drawing.Color.Thistle;
-            this.top.ForeColor = System.Drawing.Color.Indigo;
-            this.top.Location = new System.Drawing.Point(245, 167);
-            this.top.Multiline = true;
-            this.top.Name = "top";
-            this.top.Size = new System.Drawing.Size(277, 183);
-            this.top.TabIndex = 1;
             // 
             // InstructionButton
             // 
@@ -76,19 +68,30 @@ namespace proekt1
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
+            // pictureBoxWinner
+            // 
+            this.pictureBoxWinner.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxWinner.Location = new System.Drawing.Point(245, 81);
+            this.pictureBoxWinner.Name = "pictureBoxWinner";
+            this.pictureBoxWinner.Size = new System.Drawing.Size(277, 243);
+            this.pictureBoxWinner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxWinner.TabIndex = 4;
+            this.pictureBoxWinner.TabStop = false;
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBoxWinner);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.InstructionButton);
-            this.Controls.Add(this.top);
             this.Controls.Add(this.name);
             this.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.Name = "main";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWinner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,9 +100,9 @@ namespace proekt1
         #endregion
 
         private System.Windows.Forms.TextBox name;
-        private System.Windows.Forms.TextBox top;
         private System.Windows.Forms.Button InstructionButton;
         private System.Windows.Forms.Button startButton;
+        public System.Windows.Forms.PictureBox pictureBoxWinner;
     }
 }
 
