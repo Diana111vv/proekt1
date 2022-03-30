@@ -29,28 +29,16 @@ namespace proekt1
         /// </summary>
         private void InitializeComponent()
         {
-            this.name = new System.Windows.Forms.TextBox();
             this.InstructionButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
             this.pictureBoxWinner = new System.Windows.Forms.PictureBox();
+            this.nameOfGame = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWinner)).BeginInit();
             this.SuspendLayout();
             // 
-            // name
-            // 
-            this.name.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.name.BackColor = System.Drawing.Color.MediumPurple;
-            this.name.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.name.Location = new System.Drawing.Point(245, 36);
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Size = new System.Drawing.Size(277, 27);
-            this.name.TabIndex = 0;
-            this.name.Text = "                        Топ Альпак";
-            // 
             // InstructionButton
             // 
-            this.InstructionButton.Location = new System.Drawing.Point(90, 378);
+            this.InstructionButton.Location = new System.Drawing.Point(74, 522);
             this.InstructionButton.Name = "InstructionButton";
             this.InstructionButton.Size = new System.Drawing.Size(152, 29);
             this.InstructionButton.TabIndex = 2;
@@ -60,7 +48,7 @@ namespace proekt1
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(523, 378);
+            this.startButton.Location = new System.Drawing.Point(548, 522);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(168, 29);
             this.startButton.TabIndex = 3;
@@ -71,26 +59,39 @@ namespace proekt1
             // pictureBoxWinner
             // 
             this.pictureBoxWinner.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBoxWinner.Location = new System.Drawing.Point(245, 81);
+            this.pictureBoxWinner.Location = new System.Drawing.Point(152, 66);
+            this.pictureBoxWinner.MaximumSize = new System.Drawing.Size(500, 450);
             this.pictureBoxWinner.Name = "pictureBoxWinner";
-            this.pictureBoxWinner.Size = new System.Drawing.Size(277, 243);
+            this.pictureBoxWinner.Size = new System.Drawing.Size(500, 450);
             this.pictureBoxWinner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxWinner.TabIndex = 4;
             this.pictureBoxWinner.TabStop = false;
+            // 
+            // nameOfGame
+            // 
+            this.nameOfGame.AutoSize = true;
+            this.nameOfGame.BackColor = System.Drawing.Color.BlueViolet;
+            this.nameOfGame.Location = new System.Drawing.Point(348, 36);
+            this.nameOfGame.Name = "nameOfGame";
+            this.nameOfGame.Size = new System.Drawing.Size(93, 20);
+            this.nameOfGame.TabIndex = 5;
+            this.nameOfGame.Text = "ТОП Альпак";
+            this.nameOfGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 653);
+            this.Controls.Add(this.nameOfGame);
             this.Controls.Add(this.pictureBoxWinner);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.InstructionButton);
-            this.Controls.Add(this.name);
             this.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.MinimumSize = new System.Drawing.Size(800, 700);
             this.Name = "main";
-            this.Text = "Form1";
+            this.Text = "mainForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWinner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -98,11 +99,10 @@ namespace proekt1
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox name;
         private System.Windows.Forms.Button InstructionButton;
         private System.Windows.Forms.Button startButton;
         public System.Windows.Forms.PictureBox pictureBoxWinner;
+        private System.Windows.Forms.Label nameOfGame;
     }
 }
 

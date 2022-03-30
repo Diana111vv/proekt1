@@ -42,43 +42,45 @@ namespace proekt1
             // choose1
             // 
             this.choose1.AutoSize = true;
-            this.choose1.Location = new System.Drawing.Point(252, 383);
+            this.choose1.Location = new System.Drawing.Point(277, 566);
             this.choose1.Name = "choose1";
-            this.choose1.Size = new System.Drawing.Size(119, 24);
+            this.choose1.Size = new System.Drawing.Size(53, 24);
             this.choose1.TabIndex = 0;
             this.choose1.TabStop = true;
-            this.choose1.Text = "имя альпаки";
+            this.choose1.Text = "Эта";
             this.choose1.UseVisualStyleBackColor = true;
             this.choose1.Click += new System.EventHandler(this.choose1_Click);
             // 
             // choose2
             // 
             this.choose2.AutoSize = true;
-            this.choose2.Location = new System.Drawing.Point(781, 398);
+            this.choose2.Location = new System.Drawing.Point(785, 566);
             this.choose2.Name = "choose2";
-            this.choose2.Size = new System.Drawing.Size(173, 24);
+            this.choose2.Size = new System.Drawing.Size(82, 24);
             this.choose2.TabIndex = 1;
             this.choose2.TabStop = true;
-            this.choose2.Text = "имя второй альпаки";
+            this.choose2.Text = "Нет Эта";
             this.choose2.UseVisualStyleBackColor = true;
             this.choose2.Click += new System.EventHandler(this.choose2_Click);
             // 
             // readPictures1
             // 
-            this.readPictures1.Location = new System.Drawing.Point(180, 23);
+            this.readPictures1.Location = new System.Drawing.Point(77, 128);
+            this.readPictures1.MaximumSize = new System.Drawing.Size(500, 400);
             this.readPictures1.Name = "readPictures1";
-            this.readPictures1.Size = new System.Drawing.Size(363, 307);
-            this.readPictures1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.readPictures1.Size = new System.Drawing.Size(500, 400);
+            this.readPictures1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.readPictures1.TabIndex = 2;
             this.readPictures1.TabStop = false;
             this.readPictures1.Click += new System.EventHandler(this.readPictures1_Click);
             // 
             // picture2
             // 
-            this.picture2.Location = new System.Drawing.Point(690, 23);
+            this.picture2.Location = new System.Drawing.Point(605, 128);
+            this.picture2.MinimumSize = new System.Drawing.Size(500, 400);
             this.picture2.Name = "picture2";
-            this.picture2.Size = new System.Drawing.Size(344, 307);
-            this.picture2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picture2.Size = new System.Drawing.Size(500, 400);
+            this.picture2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picture2.TabIndex = 3;
             this.picture2.TabStop = false;
             // 
@@ -88,7 +90,7 @@ namespace proekt1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(548, 398);
+            this.button1.Location = new System.Drawing.Point(558, 600);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 29);
             this.button1.TabIndex = 4;
@@ -101,12 +103,13 @@ namespace proekt1
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
-            this.ClientSize = new System.Drawing.Size(1177, 656);
+            this.ClientSize = new System.Drawing.Size(1182, 753);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.picture2);
             this.Controls.Add(this.readPictures1);
             this.Controls.Add(this.choose2);
             this.Controls.Add(this.choose1);
+            this.MaximumSize = new System.Drawing.Size(1200, 800);
             this.Name = "evaluationForm";
             this.Text = "evaluationForm";
             this.Load += new System.EventHandler(this.evaluationForm_Load);
