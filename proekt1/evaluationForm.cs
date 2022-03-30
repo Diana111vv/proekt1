@@ -15,7 +15,7 @@ namespace proekt1
 { 
     public partial class evaluationForm : Form 
     {
-        SqlConnection sqlConnection=new SqlConnection("Data Source=BABULYACOMPUCTE\\SQLEXPRESS;Initial Catalog=msdb;Integrated Security=True");
+        SqlConnection sqlConnection=new SqlConnection("Server = wpl36.hosting.reg.ru; Database = u1615366_SQL_BASE; User Id = u1615366_SQL_BASE; Password = Bx8oe92%;");
         SqlCommand sqlCommand;
         int choosenAlp=-1;
         int currentAlp1=0;
@@ -38,26 +38,26 @@ namespace proekt1
 
         private void readPictures1_Click(object sender, EventArgs e)
         {
-            //Array array = null;
-            //sqlConnection.Open();
-            //for (int i = 1; i < 17; i++)
-            //{
+            Array array = null;
+            sqlConnection.Open();
+            for (int i = 1; i < 17; i++)
+            {
 
 
 
-            //    readPictures1.Image = Image.FromFile(@$"{Environment.CurrentDirectory}\alpakas\{i}alp.jpg");
-            //    MemoryStream ms = new MemoryStream();
-            //    readPictures1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            //    array = ms.ToArray();
+                readPictures1.Image = Image.FromFile(@$"{Environment.CurrentDirectory}\alpakas\{i}alp.jpg");
+                MemoryStream ms = new MemoryStream();
+                readPictures1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                array = ms.ToArray();
 
 
-            //    sqlCommand = new SqlCommand("INSERT INTO ImageTable (id,pictures1) VALUES (@Id,@pictures1)", sqlConnection);
-            //    sqlCommand.Parameters.AddWithValue("@Id", i);
-            //    sqlCommand.Parameters.Add("@pictures1", SqlDbType.VarBinary, 8000).Value = array;
-            //    sqlCommand.ExecuteNonQuery();
-            //    array = null;
-            //}
-            //sqlConnection.Close();
+                sqlCommand = new SqlCommand("INSERT INTO ImageTable (id,pictures1) VALUES (@Id,@pictures1)", sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@Id", i);
+                sqlCommand.Parameters.Add("@pictures1", SqlDbType.VarBinary, 8000).Value = array;
+                sqlCommand.ExecuteNonQuery();
+                array = null;
+            }
+            sqlConnection.Close();
 
 
 
