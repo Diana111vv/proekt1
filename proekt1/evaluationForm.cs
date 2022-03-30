@@ -65,8 +65,6 @@ namespace proekt1
 
         private void evaluationForm_Load(object sender, EventArgs e)
         {
-            picture2.SizeMode = PictureBoxSizeMode.StretchImage;
-            readPictures1.SizeMode = PictureBoxSizeMode.StretchImage;
             sqlConnection.Open();          
             sqlCommand = new SqlCommand($"SELECT * FROM ImageTable", sqlConnection);          
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
