@@ -150,6 +150,13 @@ namespace proekt1
             {
                 List<ImagePicture> winPictures = pictures.OrderBy(x => x.rating).ToList();
                 main.pictureBoxWinner.Image = winPictures[0].image;
+                main.pictureBoxSecondPlace.Image = winPictures[1].image;
+                main.pictureBoxThirdPlace.Image = winPictures[2].image;
+                main.pictureBoxFourthPlace.Image = winPictures[3].image;
+                main.pictureBoxFifthPlace.Image = winPictures[4].image;
+                main.pictureBoxSixthPlace.Image = winPictures[5].image;
+                main.pictureBoxSeventhPlace.Image = winPictures[6].image;
+                main.pictureBoxEithPlace.Image = winPictures[7].image;
                 Close();
 
             }
