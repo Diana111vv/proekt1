@@ -4,3 +4,6 @@ Label вместо TextBox.
 При раскрытии окна текст "Топ альпак" перемещается не в нужном месте. Фото приложено.
 Исключение System.ArgumentOutOfRangeException. Фото приложено
 Button1.
+PictureBox.
+Баг с картинками. Фото приложено.
+Исключение System.ArgumentOutOfRangeException. Фото приложено.
