@@ -15,12 +15,13 @@ namespace proekt1
 { 
     public partial class evaluationForm : Form 
     {
-        SqlConnection sqlConnection=new SqlConnection("Server = wpl36.hosting.reg.ru; Database = u1615366_SQL_BASE; User Id = u1615366_SQL_BASE; Password = Bx8oe92%;");
+
+        SqlConnection sqlConnection=new SqlConnection("Server=wpl36.hosting.reg.ru;Database=u1615366_SQL_BASE;User Id=u1615366_SQL_BASE;Password=Bx8oe92%;");
         SqlCommand sqlCommand;
-        int choosenAlp=-1;
-        int currentAlp1=0;
-        int currentAlp2=1;
-        List<ImagePicture> pictures=new List<ImagePicture>();
+        int choosenAlp = -1;
+        int currentAlp1 = 0;
+        int currentAlp2 = 1;
+        List<ImagePicture> pictures = new List<ImagePicture>();
         main main;
 
         public evaluationForm()
@@ -36,7 +37,7 @@ namespace proekt1
             this.main = main;
         }
 
-        private void readPictures1_Click(object sender, EventArgs e)
+        private void pictures1_Click(object sender, EventArgs e)
         {
             Array array = null;
             sqlConnection.Open();
@@ -45,9 +46,9 @@ namespace proekt1
 
 
 
-                readPictures1.Image = Image.FromFile(@$"{Environment.CurrentDirectory}\alpakas\{i}alp.jpg");
+                pictures1.Image = Image.FromFile(@$"{Environment.CurrentDirectory}\alpakas\{i}alp.jpg");
                 MemoryStream ms = new MemoryStream();
-                readPictures1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                pictures1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                 array = ms.ToArray();
 
 
@@ -65,21 +66,21 @@ namespace proekt1
 
         private void evaluationForm_Load(object sender, EventArgs e)
         {
-            sqlConnection.Open();          
-            sqlCommand = new SqlCommand($"SELECT * FROM ImageTable", sqlConnection);          
+            sqlConnection.Open();
+            sqlCommand = new SqlCommand($"SELECT * FROM ImageTable", sqlConnection);
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-            int i=1;
+            int i = 1;
             if (sqlDataReader.HasRows)
             {
                 while (sqlDataReader.Read())
-                {          
+                {
                     byte[] data = (byte[])sqlDataReader.GetValue(1);
-                    var stream = new MemoryStream(data);                  
-                    pictures.Add(new ImagePicture(Image.FromStream(stream),i));
+                    var stream = new MemoryStream(data);
+                    pictures.Add(new ImagePicture(Image.FromStream(stream), i));
                     i++;
 
                 }
-            }                     
+            }
             sqlConnection.Close();
             int n = pictures.Count;
             Random r = new Random();
@@ -91,7 +92,7 @@ namespace proekt1
                 pictures[k] = pictures[n];
                 pictures[n] = value;
             }
-            readPictures1.Image = pictures[currentAlp1].image;
+            pictures1.Image = pictures[currentAlp1].image;
             picture2.Image = pictures[currentAlp2].image;
         }
 
@@ -105,7 +106,7 @@ namespace proekt1
             choosenAlp = 2;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void next_Click(object sender, EventArgs e)
         {
             if (choosenAlp == 1)
             {
@@ -125,15 +126,15 @@ namespace proekt1
         }
         private void ChangeAlpaco()
         {
-            if (currentAlp2< 16)
+            if (currentAlp2 < 16)
             {
-                if (currentAlp2 == 15 && currentAlp1==14)
+                if (currentAlp2 == 15 && currentAlp1 == 14)
                 {
                     currentAlp1 = 0;
 
                 }
-                
-                else  
+
+                else
                 {
                     currentAlp1++;
                     currentAlp2++;
@@ -141,13 +142,13 @@ namespace proekt1
                 if (currentAlp2 < 16 && currentAlp1 < 16)
                 {
                     picture2.Image = pictures[currentAlp2].image;
-                    readPictures1.Image = pictures[currentAlp1].image;
+                    pictures1.Image = pictures[currentAlp1].image;
                 }
             }
 
             else
             {
-                List<ImagePicture> winPictures =pictures.OrderBy(x => x.rating).ToList();
+                List<ImagePicture> winPictures = pictures.OrderBy(x => x.rating).ToList();
                 main.pictureBoxWinner.Image = winPictures[0].image;
                 Close();
 
@@ -156,7 +157,7 @@ namespace proekt1
 
         }
 
-        
+
     }
     
 }

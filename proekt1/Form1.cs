@@ -19,7 +19,7 @@ namespace proekt1
 
         private void InstructionButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Для начала оценивания мимимишности альпак нужно нажать на кнопку _Начать все заново_, после оценивания выйдет рейтинг альпак, удачи!");
+            MessageBox.Show("Для начала оценивания мимимишности альпак нужно нажать на кнопку Начать все заново, после оценивания выйдет рейтинг альпак, удачи!");
         }
 
         private void startButton_Click(object sender, EventArgs e)

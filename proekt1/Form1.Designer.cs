@@ -38,6 +38,7 @@ namespace proekt1
             // 
             // InstructionButton
             // 
+            this.InstructionButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.InstructionButton.Location = new System.Drawing.Point(74, 522);
             this.InstructionButton.Name = "InstructionButton";
             this.InstructionButton.Size = new System.Drawing.Size(152, 29);
@@ -48,6 +49,7 @@ namespace proekt1
             // 
             // startButton
             // 
+            this.startButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.startButton.Location = new System.Drawing.Point(548, 522);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(168, 29);
@@ -69,6 +71,7 @@ namespace proekt1
             // 
             // nameOfGame
             // 
+            this.nameOfGame.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nameOfGame.AutoSize = true;
             this.nameOfGame.BackColor = System.Drawing.Color.BlueViolet;
             this.nameOfGame.Location = new System.Drawing.Point(348, 36);

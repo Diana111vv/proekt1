@@ -31,16 +31,17 @@ namespace proekt1
         {
             this.choose1 = new System.Windows.Forms.RadioButton();
             this.choose2 = new System.Windows.Forms.RadioButton();
-            this.readPictures1 = new System.Windows.Forms.PictureBox();
+            this.pictures1 = new System.Windows.Forms.PictureBox();
             this.picture2 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.readPictures1)).BeginInit();
+            this.next = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictures1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture2)).BeginInit();
             this.SuspendLayout();
             // 
             // choose1
             // 
+            this.choose1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.choose1.AutoSize = true;
             this.choose1.Location = new System.Drawing.Point(277, 566);
             this.choose1.Name = "choose1";
@@ -53,6 +54,7 @@ namespace proekt1
             // 
             // choose2
             // 
+            this.choose2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.choose2.AutoSize = true;
             this.choose2.Location = new System.Drawing.Point(785, 566);
             this.choose2.Name = "choose2";
@@ -63,19 +65,20 @@ namespace proekt1
             this.choose2.UseVisualStyleBackColor = true;
             this.choose2.Click += new System.EventHandler(this.choose2_Click);
             // 
-            // readPictures1
+            // pictures1
             // 
-            this.readPictures1.Location = new System.Drawing.Point(77, 128);
-            this.readPictures1.MaximumSize = new System.Drawing.Size(500, 400);
-            this.readPictures1.Name = "readPictures1";
-            this.readPictures1.Size = new System.Drawing.Size(500, 400);
-            this.readPictures1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.readPictures1.TabIndex = 2;
-            this.readPictures1.TabStop = false;
-            this.readPictures1.Click += new System.EventHandler(this.readPictures1_Click);
+            this.pictures1.Location = new System.Drawing.Point(77, 128);
+            this.pictures1.MaximumSize = new System.Drawing.Size(500, 400);
+            this.pictures1.Name = "pictures1";
+            this.pictures1.Size = new System.Drawing.Size(500, 400);
+            this.pictures1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictures1.TabIndex = 2;
+            this.pictures1.TabStop = false;
+            this.pictures1.Click += new System.EventHandler(this.pictures1_Click);
             // 
             // picture2
             // 
+            this.picture2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picture2.Location = new System.Drawing.Point(605, 128);
             this.picture2.MinimumSize = new System.Drawing.Size(500, 400);
             this.picture2.Name = "picture2";
@@ -88,15 +91,16 @@ namespace proekt1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // button1
+            // next
             // 
-            this.button1.Location = new System.Drawing.Point(558, 600);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Далее";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.next.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.next.Location = new System.Drawing.Point(558, 600);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(94, 29);
+            this.next.TabIndex = 4;
+            this.next.Text = "Далее";
+            this.next.UseVisualStyleBackColor = true;
+            this.next.Click += new System.EventHandler(this.next_Click);
             // 
             // evaluationForm
             // 
@@ -104,16 +108,16 @@ namespace proekt1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(1182, 753);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.next);
             this.Controls.Add(this.picture2);
-            this.Controls.Add(this.readPictures1);
+            this.Controls.Add(this.pictures1);
             this.Controls.Add(this.choose2);
             this.Controls.Add(this.choose1);
             this.MaximumSize = new System.Drawing.Size(1200, 800);
             this.Name = "evaluationForm";
             this.Text = "evaluationForm";
             this.Load += new System.EventHandler(this.evaluationForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.readPictures1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictures1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -124,9 +128,9 @@ namespace proekt1
 
         private System.Windows.Forms.RadioButton choose1;
         private System.Windows.Forms.RadioButton choose2;
-        private System.Windows.Forms.PictureBox readPictures1;
+        private System.Windows.Forms.PictureBox pictures1;
         private System.Windows.Forms.PictureBox picture2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button next;
     }
 }
