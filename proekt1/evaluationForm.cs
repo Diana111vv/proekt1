@@ -39,26 +39,26 @@ namespace proekt1
 
         private void pictures1_Click(object sender, EventArgs e)
         {
-            Array array = null;
-            sqlConnection.Open();
-            for (int i = 1; i < 17; i++)
-            {
+            //Array array = null;
+            //sqlConnection.Open();
+            //for (int i = 1; i < 17; i++)
+            //{
 
 
 
-                pictures1.Image = Image.FromFile(@$"{Environment.CurrentDirectory}\alpakas\{i}alp.jpg");
-                MemoryStream ms = new MemoryStream();
-                pictures1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                array = ms.ToArray();
+            //    pictures1.Image = Image.FromFile(@$"{Environment.CurrentDirectory}\alpakas\{i}alp.jpg");
+            //    MemoryStream ms = new MemoryStream();
+            //    pictures1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            //    array = ms.ToArray();
 
 
-                sqlCommand = new SqlCommand("INSERT INTO ImageTable (id,pictures1) VALUES (@Id,@pictures1)", sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@Id", i);
-                sqlCommand.Parameters.Add("@pictures1", SqlDbType.VarBinary, 8000).Value = array;
-                sqlCommand.ExecuteNonQuery();
-                array = null;
-            }
-            sqlConnection.Close();
+            //    sqlCommand = new SqlCommand("INSERT INTO ImageTable (id,pictures1) VALUES (@Id,@pictures1)", sqlConnection);
+            //    sqlCommand.Parameters.AddWithValue("@Id", i);
+            //    sqlCommand.Parameters.Add("@pictures1", SqlDbType.VarBinary, 8000).Value = array;
+            //    sqlCommand.ExecuteNonQuery();
+            //    array = null;
+            //}
+            //sqlConnection.Close();
 
 
 
