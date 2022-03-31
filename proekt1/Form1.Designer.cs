@@ -32,7 +32,6 @@ namespace proekt1
             this.InstructionButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
             this.pictureBoxWinner = new System.Windows.Forms.PictureBox();
-            this.nameOfGame = new System.Windows.Forms.Label();
             this.pictureBoxSecondPlace = new System.Windows.Forms.PictureBox();
             this.pictureBoxSeventhPlace = new System.Windows.Forms.PictureBox();
             this.pictureBoxThirdPlace = new System.Windows.Forms.PictureBox();
@@ -83,18 +82,6 @@ namespace proekt1
             this.pictureBoxWinner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxWinner.TabIndex = 4;
             this.pictureBoxWinner.TabStop = false;
-            // 
-            // nameOfGame
-            // 
-            this.nameOfGame.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nameOfGame.AutoSize = true;
-            this.nameOfGame.BackColor = System.Drawing.Color.BlueViolet;
-            this.nameOfGame.Location = new System.Drawing.Point(429, 9);
-            this.nameOfGame.Name = "nameOfGame";
-            this.nameOfGame.Size = new System.Drawing.Size(93, 20);
-            this.nameOfGame.TabIndex = 5;
-            this.nameOfGame.Text = "ТОП Альпак";
-            this.nameOfGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBoxSecondPlace
             // 
@@ -170,11 +157,11 @@ namespace proekt1
             // 
             this.top8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.top8.AutoSize = true;
-            this.top8.Location = new System.Drawing.Point(346, 47);
+            this.top8.Location = new System.Drawing.Point(400, 27);
             this.top8.Name = "top8";
-            this.top8.Size = new System.Drawing.Size(224, 20);
-            this.top8.TabIndex = 21;
-            this.top8.Text = "Здесь вы видете ТОП 8 альпак!";
+            this.top8.Size = new System.Drawing.Size(89, 20);
+            this.top8.TabIndex = 100;
+            this.top8.Text = "Топ Альпак";
             // 
             // main
             // 
@@ -190,7 +177,6 @@ namespace proekt1
             this.Controls.Add(this.pictureBoxThirdPlace);
             this.Controls.Add(this.pictureBoxSeventhPlace);
             this.Controls.Add(this.pictureBoxSecondPlace);
-            this.Controls.Add(this.nameOfGame);
             this.Controls.Add(this.pictureBoxWinner);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.InstructionButton);
@@ -215,7 +201,6 @@ namespace proekt1
         private System.Windows.Forms.Button InstructionButton;
         private System.Windows.Forms.Button startButton;
         public System.Windows.Forms.PictureBox pictureBoxWinner;
-        public System.Windows.Forms.Label nameOfGame;
         public System.Windows.Forms.PictureBox pictureBoxSecondPlace;
         public System.Windows.Forms.PictureBox pictureBoxSeventhPlace;
         public System.Windows.Forms.PictureBox pictureBoxThirdPlace;
@@ -223,7 +208,7 @@ namespace proekt1
         public System.Windows.Forms.PictureBox pictureBoxSixthPlace;
         public System.Windows.Forms.PictureBox pictureBoxFifthPlace;
         public System.Windows.Forms.PictureBox pictureBoxFourthPlace;
-        private System.Windows.Forms.Label top8;
+        public System.Windows.Forms.Label top8;
     }
 }
 

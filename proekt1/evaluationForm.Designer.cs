@@ -35,6 +35,8 @@ namespace proekt1
             this.picture2 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.next = new System.Windows.Forms.Button();
+            this.MiMiMiMetr = new System.Windows.Forms.Label();
+            this.Instruction = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictures1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture2)).BeginInit();
             this.SuspendLayout();
@@ -102,12 +104,36 @@ namespace proekt1
             this.next.UseVisualStyleBackColor = true;
             this.next.Click += new System.EventHandler(this.next_Click);
             // 
+            // MiMiMiMetr
+            // 
+            this.MiMiMiMetr.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MiMiMiMetr.AutoSize = true;
+            this.MiMiMiMetr.Location = new System.Drawing.Point(541, 23);
+            this.MiMiMiMetr.Name = "MiMiMiMetr";
+            this.MiMiMiMetr.Size = new System.Drawing.Size(111, 20);
+            this.MiMiMiMetr.TabIndex = 300;
+            this.MiMiMiMetr.Text = "МиМиМиМетр";
+            // 
+            // Instruction
+            // 
+            this.Instruction.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Instruction.AutoSize = true;
+            this.Instruction.Location = new System.Drawing.Point(188, 56);
+            this.Instruction.MinimumSize = new System.Drawing.Size(60, 60);
+            this.Instruction.Name = "Instruction";
+            this.Instruction.Size = new System.Drawing.Size(827, 60);
+            this.Instruction.TabIndex = 500;
+            this.Instruction.Text = "Кто же из этих альпак самый мимимишный? Давай узнаем твое мнение. Чтобы выбрать п" +
+    "росто кликни по картинке";
+            // 
             // evaluationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.Instruction);
+            this.Controls.Add(this.MiMiMiMetr);
             this.Controls.Add(this.next);
             this.Controls.Add(this.picture2);
             this.Controls.Add(this.pictures1);
@@ -132,5 +158,7 @@ namespace proekt1
         private System.Windows.Forms.PictureBox picture2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button next;
+        private System.Windows.Forms.Label MiMiMiMetr;
+        private System.Windows.Forms.Label Instruction;
     }
 }
