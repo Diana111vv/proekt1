@@ -6,3 +6,4 @@ Label вместо TextBox.
 Button1.
 PictureBox.
 Баг с картинками. Фото приложено.
+Исключение System.ArgumentOutOfRangeException. Фото приложено.
